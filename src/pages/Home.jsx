@@ -15,7 +15,7 @@ const Home = () => {
   };
   return (
     <div>
-      <h1>home</h1>
+      <h1>Hola, por favor ingresa tu nombre aqui</h1>
       <form onSubmit={handelsubmit} action="">
         <input ref={inputName} type="text" />
         <button>ingresa</button>
