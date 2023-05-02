@@ -1,11 +1,24 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
-
+import usefetch from '../hooks/useFetch'
+import { useEffect } from 'react'
+import Pikachus from '../components/Pikachus'
 const LocationPoke = () => {
-   const { pokeApy } = useSelector(state => state)
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=10&offset=0.`
+   const [getallapy, pokemon] = usefetch(url)
+   useEffect(() => {
+    getallapy()
+   },[])
+    console.log(pokemon)
+   const { nameuser } = useSelector(state => state)
   return (
     <div>
-      <h1>Bienvenido {pokeApy}, aqui podrás encontrar tu Pokemon favórito</h1>
+      <h1>bienvenido{nameuser}</h1>
+      {
+        pokemon?.results.map(pikachu => (
+        <Pikachus key={pikachu.url} url={pikachu.url}/>
+        ))
+      }
+   
     </div>
   )
 }
