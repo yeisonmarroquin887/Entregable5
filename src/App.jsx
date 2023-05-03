@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import LocationPoke from './pages/LocationPoke'
 import Err from './pages/Err'
 import Proteg from './pages/Proteg'
+import Pokeinfo from './pages/Pokeinfo'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route element={ <Proteg/> }>
         <Route path='/location' element={<LocationPoke/>}/>
+        <Route path='/pokedex/:name' element={ <Pokeinfo/> }/>
       </Route>
       <Route path='*' element={<Err/>}/>
     </Routes>
