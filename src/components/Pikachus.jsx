@@ -6,7 +6,6 @@ const Pikachus = ({ url }) => {
   useEffect(() => {
     getpokemones();
   }, []);
-  console.log(pokemon);
   return (
     <article className="pokes">
       <article className={`pokemon border-${pokemon?.types[0].type.name}`}>

@@ -2,11 +2,12 @@ import React, { useEffect, useRef } from 'react'
 import {useNavigate } from 'react-router-dom'
 import usefetch from '../hooks/useFetch'
 
-const Frompokes = () => {
+const Frompokes = ({setFromUrl}) => {
 
 
     const inputpoke = useRef()
     const navigate = useNavigate()
+    
     const url = `https://pokeapi.co/api/v2/type/`
     const [getnameapy, pokemons] = usefetch(url)
     useEffect(() => {
@@ -19,7 +20,7 @@ const Frompokes = () => {
         
  }
  const handelchange = e => {
-    console.log(e.target.value)
+    setFromUrl(e.target.value)
  }
 
   return (
